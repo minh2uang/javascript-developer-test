@@ -1,6 +1,6 @@
 const { httpGet } = require('./mock-http-interface')
 
-const getArnieQuotes = async (urls) => Promise.all(urls.map(getArnieQuote))
+const getArnieQuotes = async (urls) => await Promise.all(urls.map(getArnieQuote))
 
 const getArnieQuote = async (url) => {
   const { status, body } = await httpGet(url)
